@@ -34,7 +34,7 @@ var SimpleCore = {
         $(document).on('click', '.btn-sns-qr', function (e) {
             e.preventDefault();
             if (SimpleCore.snsQRCode != '') {
-                SimpleCore.alert('同性聊天交友请上车','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
+                SimpleCore.alert('聊天交友','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
             } else {
                 SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
