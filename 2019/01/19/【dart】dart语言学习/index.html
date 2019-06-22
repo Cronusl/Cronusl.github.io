@@ -1,0 +1,604 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Cronus">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>【dart】dart语言学习 - Cronus</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Cronus">Cronus</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar">
+        
+        <h1 class="cover-siteName">Cronus</h1>
+        <h3 class="cover-siteTitle">Cronus&#39;s Technology Blog</h3>
+        <p class="cover-siteDesc">不努力，背井离乡出来干嘛，当卧底吗</p>
+        <div class="cover-sns">
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">搜索</label>
+        <input class="search-field" type="text" name="s" placeholder="搜索">
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2019-01-19">2019-01-19</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">【dart】dart语言学习</h2>
+            <div class="post-meta">
+                本文总共12428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h3 id="Dart语言学习"><a href="#Dart语言学习" class="headerlink" title="Dart语言学习"></a>Dart语言学习</h3><hr>
+<h4 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h4><p>Dart是谷歌开发的计算机编程语言，后来被Ecma (ECMA-408)认定为标准 [1]  。它被用于web、服务器、移动应用 和物联网等领域的开发。它是宽松开源许可证（修改的BSD证书）下的开源软件。<br>Dart是面向对象的、类定义的、单继承的语言。它的语法类似C语言，可以转译为JavaScript，支持接口(interfaces)、混入(mixins)、抽象类(abstract classes)、具体化泛型(reified generics)、可选类型(optional typing)和sound type system。</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;test&apos;; // name 表示一个字符串变量,var不是显示类型name的类型的是可以改变的，</span><br><span class="line">name = 2; // name 表示一个整型变量</span><br></pre></td></tr></table></figure>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int lineCount;</span><br><span class="line">assert(lineCount == null);</span><br></pre></td></tr></table></figure>
+<p>Dart中所有未初始化的变量默认值为null, 并且Dart中所有的类型都是对象</p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>Dart中使用关键字 <code>final</code>和<code>const</code>来定义常量, </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final name = &apos;Bob&apos;; // Without a type annotation</span><br><span class="line">final String nickname = &apos;Bobby&apos;;</span><br><span class="line"></span><br><span class="line">const name = &apos;Bob&apos;;</span><br><span class="line">const string name = &apos;Bob&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="内置数据类型"><a href="#内置数据类型" class="headerlink" title="内置数据类型"></a>内置数据类型</h4><ul>
+<li>numbers: int double 都是 num的子类型</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> hex = <span class="number">0xDEADBEEF</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">1.1</span>;</span><br><span class="line"><span class="keyword">var</span> exponents = <span class="number">1.42e5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// String -&gt; int</span></span><br><span class="line"><span class="keyword">var</span> one = <span class="built_in">int</span>.parse(<span class="string">'1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(one == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String -&gt; double</span></span><br><span class="line"><span class="keyword">var</span> onePointOne = <span class="built_in">double</span>.parse(<span class="string">'1.1'</span>);</span><br><span class="line"><span class="keyword">assert</span>(onePointOne == <span class="number">1.1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// int -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> oneAsString = <span class="number">1.</span>toString();</span><br><span class="line"><span class="keyword">assert</span>(oneAsString == <span class="string">'1'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// double -&gt; String</span></span><br><span class="line"><span class="built_in">String</span> piAsString = <span class="number">3.14159</span>.toStringAsFixed(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">assert</span>(piAsString == <span class="string">'3.14'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>strings UTF-16编码</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'Single quotes work well for string literals.'</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"Double quotes work just as well."</span>;</span><br><span class="line"><span class="keyword">var</span> s3 = <span class="string">'It\'s easy to escape the string delimiter.'</span>;</span><br><span class="line"><span class="keyword">var</span> s4 = <span class="string">"It's even easier to use the other delimiter."</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用$&#123;&#125;格式化符串</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">'string interpolation'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>(<span class="string">'Dart has <span class="subst">$s</span>, which is very handy.'</span> ==</span><br><span class="line">    <span class="string">'Dart has string interpolation, '</span> +</span><br><span class="line">        <span class="string">'which is very handy.'</span>);</span><br><span class="line"><span class="keyword">assert</span>(<span class="string">'That deserves all caps. '</span> +</span><br><span class="line">        <span class="string">'<span class="subst">$&#123;s.toUpperCase()&#125;</span> is very handy!'</span> ==</span><br><span class="line">    <span class="string">'That deserves all caps. '</span> +</span><br><span class="line">        <span class="string">'STRING INTERPOLATION is very handy!'</span>);</span><br></pre></td></tr></table></figure>
+<p>通过’’’或”””创建多行字符串</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">'''</span></span><br><span class="line"><span class="string">You can create</span></span><br><span class="line"><span class="string">multi-line strings like this one.</span></span><br><span class="line"><span class="string">'''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"""This is also a</span></span><br><span class="line"><span class="string">multi-line string."""</span>;</span><br></pre></td></tr></table></figure>
+<p>通过添加前缀r创建raw字符串</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">r'In a raw string, not even \n gets special treatment.'</span>;</span><br></pre></td></tr></table></figure>
+<p>文字字符串是编译时常量，只要任何插值表达式是一个编译时常量，其值为null或数值，字符串或布尔值</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// These work in a const string.</span></span><br><span class="line"><span class="keyword">const</span> aConstNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> aConstBool = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">const</span> aConstString = <span class="string">'a constant string'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// These do NOT work in a const string.</span></span><br><span class="line"><span class="keyword">var</span> aNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> aBool = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">var</span> aString = <span class="string">'a string'</span>;</span><br><span class="line"><span class="keyword">const</span> aConstList = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> validConstString = <span class="string">'<span class="subst">$aConstNum</span> <span class="subst">$aConstBool</span> <span class="subst">$aConstString<span class="string">';</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">// const invalidConstString = '</span></span><span class="subst">$aNum</span> <span class="subst">$aBool</span> <span class="subst">$aString</span> <span class="subst">$aConstList<span class="string">';</span></span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>booleans true / false</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Check for an empty string.</span></span><br><span class="line"><span class="keyword">var</span> fullName = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">assert</span>(fullName.isEmpty);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Check for zero.</span></span><br><span class="line"><span class="keyword">var</span> hitPoints = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">assert</span>(hitPoints &lt;= <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Check for null.</span></span><br><span class="line"><span class="keyword">var</span> unicorn;</span><br><span class="line"><span class="keyword">assert</span>(unicorn == <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Check for NaN.</span></span><br><span class="line"><span class="keyword">var</span> iMeantToDoThis = <span class="number">0</span> / <span class="number">0</span>;</span><br><span class="line"><span class="keyword">assert</span>(iMeantToDoThis.isNaN);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>lists (also known as <em>arrays</em>) 数组</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">assert</span>(list.length == <span class="number">3</span>);</span><br><span class="line"><span class="keyword">assert</span>(list[<span class="number">1</span>] == <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">list[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">assert</span>(list[<span class="number">1</span>] == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常量数组</span></span><br><span class="line"><span class="keyword">var</span> constantList = <span class="keyword">const</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">// constantList[1] = 1; // Uncommenting this causes an error.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>maps key/value对</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gifts = &#123;</span><br><span class="line">  <span class="comment">// Key:    Value</span></span><br><span class="line">  <span class="string">'first'</span>: <span class="string">'partridge'</span>,</span><br><span class="line">  <span class="string">'second'</span>: <span class="string">'turtledoves'</span>,</span><br><span class="line">  <span class="string">'fifth'</span>: <span class="string">'golden rings'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nobleGases = &#123;</span><br><span class="line">  <span class="number">2</span>: <span class="string">'helium'</span>,</span><br><span class="line">  <span class="number">10</span>: <span class="string">'neon'</span>,</span><br><span class="line">  <span class="number">18</span>: <span class="string">'argon'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gifts = <span class="built_in">Map</span>();</span><br><span class="line">gifts[<span class="string">'first'</span>] = <span class="string">'partridge'</span>;</span><br><span class="line">gifts[<span class="string">'second'</span>] = <span class="string">'turtledoves'</span>;</span><br><span class="line">gifts[<span class="string">'fifth'</span>] = <span class="string">'golden rings'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nobleGases = <span class="built_in">Map</span>();</span><br><span class="line">nobleGases[<span class="number">2</span>] = <span class="string">'helium'</span>;</span><br><span class="line">nobleGases[<span class="number">10</span>] = <span class="string">'neon'</span>;</span><br><span class="line">nobleGases[<span class="number">18</span>] = <span class="string">'argon'</span>;</span><br><span class="line"></span><br><span class="line">TODO: Dart <span class="number">2</span>中可以省略关键字 <span class="keyword">new</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>runes (for expressing Unicode characters in a string) 符文</li>
+<li>symbols  暂时无用</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> isNoble(<span class="built_in">int</span> atomicNumber) &#123;</span><br><span class="line">  <span class="keyword">return</span> _nobleGases[atomicNumber] != <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">返回值类型 函数名 (参数类型,...) &#123;</span><br><span class="line">   函数体</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回值可省略</span></span><br><span class="line">isNoble(atomicNumber) &#123;</span><br><span class="line">  <span class="keyword">return</span> _nobleGases[atomicNumber] != <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// =&gt; 简短返回(=&gt; 相当于 &#123; return expr; &#125;)</span></span><br><span class="line"><span class="built_in">bool</span> isNoble(<span class="built_in">int</span> atomicNumber) =&gt; _nobleGases[atomicNumber] != <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>参数</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可选的命名参数</span></span><br><span class="line">enableFlags(bold: <span class="keyword">true</span>, hidden: <span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用&#123;param1, param2, …&#125;指定命名参数</span></span><br><span class="line"><span class="keyword">void</span> enableFlags(&#123;<span class="built_in">bool</span> bold, <span class="built_in">bool</span> hidden&#125;) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// @required 指定必须传递的参数</span></span><br><span class="line"><span class="keyword">const</span> Scrollbar(&#123;Key key, <span class="meta">@required</span> Widget child&#125;)</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 使用 []封装可选位置参数</span></span><br><span class="line"><span class="built_in">String</span> say(<span class="built_in">String</span> from, <span class="built_in">String</span> msg, [<span class="built_in">String</span> device]) &#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">'<span class="subst">$from</span> says <span class="subst">$msg<span class="string">';</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  if (device != null) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    result = '</span></span><span class="subst">$result</span> with a <span class="subst">$device<span class="string">';</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  &#125;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  return result;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string"></span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">assert(say('</span></span>Bob'</span>, <span class="string">'Howdy'</span>) == <span class="string">'Bob says Howdy'</span>);</span><br><span class="line"><span class="keyword">assert</span>(say(<span class="string">'Bob'</span>, <span class="string">'Howdy'</span>, <span class="string">'smoke signal'</span>) ==</span><br><span class="line">    <span class="string">'Bob says Howdy with a smoke signal'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>默认参数</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Sets the [bold] and [hidden] flags ...</span></span><br><span class="line"><span class="keyword">void</span> enableFlags(&#123;<span class="built_in">bool</span> bold = <span class="keyword">false</span>, <span class="built_in">bool</span> hidden = <span class="keyword">false</span>&#125;) &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bold will be true; hidden will be false.</span></span><br><span class="line">enableFlags(bold: <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可选位置参数默认值</span></span><br><span class="line"><span class="built_in">String</span> say(<span class="built_in">String</span> from, <span class="built_in">String</span> msg,</span><br><span class="line">    [<span class="built_in">String</span> device = <span class="string">'carrier pigeon'</span>, <span class="built_in">String</span> mood]) &#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="string">'<span class="subst">$from</span> says <span class="subst">$msg<span class="string">';</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  if (device != null) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    result = '</span></span><span class="subst">$result</span> with a <span class="subst">$device<span class="string">';</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  &#125;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  if (mood != null) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    result = '</span></span><span class="subst">$result</span> (in a <span class="subst">$mood</span> mood)'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>(say(<span class="string">'Bob'</span>, <span class="string">'Howdy'</span>) ==</span><br><span class="line">    <span class="string">'Bob says Howdy with a carrier pigeon'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 数组和字典默认值</span></span><br><span class="line"><span class="keyword">void</span> doStuff(</span><br><span class="line">    &#123;<span class="built_in">List</span>&lt;<span class="built_in">int</span>&gt; list = <span class="keyword">const</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt; gifts = <span class="keyword">const</span> &#123;</span><br><span class="line">      <span class="string">'first'</span>: <span class="string">'paper'</span>,</span><br><span class="line">      <span class="string">'second'</span>: <span class="string">'cotton'</span>,</span><br><span class="line">      <span class="string">'third'</span>: <span class="string">'leather'</span></span><br><span class="line">    &#125;&#125;) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'list:  <span class="subst">$list<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  print('</span></span>gifts: <span class="subst">$gifts<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125;</span></span></span></span><br></pre></td></tr></table></figure>
+<p><strong>main()函数</strong></p>
+<p>main函数返回值为空，带有一个可选的List<string>参数</string></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Run the app like this: dart args.dart 1 test</span></span><br><span class="line"><span class="keyword">void</span> main(<span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; arguments) &#123;</span><br><span class="line">  <span class="built_in">print</span>(arguments);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">assert</span>(arguments.length == <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">assert</span>(<span class="built_in">int</span>.parse(arguments[<span class="number">0</span>]) == <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">assert</span>(arguments[<span class="number">1</span>] == <span class="string">'test'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>函数最为第一个类对象</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> printElement(<span class="built_in">int</span> element) &#123;</span><br><span class="line">  <span class="built_in">print</span>(element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass printElement as a parameter.</span></span><br><span class="line">list.forEach(printElement); <span class="comment">// 123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loudify = (msg) =&gt; <span class="string">'!!! <span class="subst">$&#123;msg.toUpperCase()&#125;</span> !!!'</span>;</span><br><span class="line"><span class="keyword">assert</span>(loudify(<span class="string">'hello'</span>) == <span class="string">'!!! HELLO !!!'</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>匿名函数</strong></p>
+<p>([[<em>Type</em>] <em>param1</em>[, …]]) {<br>  <em>codeBlock</em>;<br>}; </p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = [<span class="string">'apples'</span>, <span class="string">'bananas'</span>, <span class="string">'oranges'</span>];</span><br><span class="line">list.forEach((item) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;list.indexOf(item)&#125;</span>: <span class="subst">$item<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125;);</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string"></span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">// 使用箭头符号</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">list.forEach(</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">    (item) =&gt; print('</span></span><span class="subst">$&#123;list.indexOf(item)&#125;</span>: <span class="subst">$item<span class="string">'));</span></span></span></span><br></pre></td></tr></table></figure>
+<p><strong>变量作用于</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">bool</span> topLevel = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="keyword">var</span> insideMain = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> myFunction() &#123;</span><br><span class="line">    <span class="keyword">var</span> insideFunction = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> nestedFunction() &#123;</span><br><span class="line">      <span class="keyword">var</span> insideNestedFunction = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">assert</span>(topLevel);</span><br><span class="line">      <span class="keyword">assert</span>(insideMain);</span><br><span class="line">      <span class="keyword">assert</span>(insideFunction);</span><br><span class="line">      <span class="keyword">assert</span>(insideNestedFunction);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>闭包作用域</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Returns a function that adds [addBy] to the</span></span><br><span class="line"><span class="comment">/// function's argument.</span></span><br><span class="line"><span class="built_in">Function</span> makeAdder(<span class="built_in">num</span> addBy) &#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="built_in">num</span> i) =&gt; addBy + i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="comment">// Create a function that adds 2.</span></span><br><span class="line">  <span class="keyword">var</span> add2 = makeAdder(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Create a function that adds 4.</span></span><br><span class="line">  <span class="keyword">var</span> add4 = makeAdder(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">assert</span>(add2(<span class="number">3</span>) == <span class="number">5</span>);</span><br><span class="line">  <span class="keyword">assert</span>(add4(<span class="number">3</span>) == <span class="number">7</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>返回值</strong></p>
+<p>所有的函数都会返回值，如果没有指定返回值则返回null</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo() &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>(foo() == <span class="keyword">null</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h4><table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unary postfix</td>
+<td><code>*expr*++</code>    <code>*expr*--</code>    <code>()</code>    <code>[]</code>    <code>.</code>    <code>?.</code></td>
+</tr>
+<tr>
+<td>unary prefix</td>
+<td><code>-*expr*</code>    <code>!*expr*</code>    <code>~*expr*</code>    <code>++*expr*</code>    <code>--*expr*</code></td>
+</tr>
+<tr>
+<td>multiplicative</td>
+<td><code>*</code>    <code>/</code>    <code>%</code>  <code>~/</code></td>
+</tr>
+<tr>
+<td>additive</td>
+<td><code>+</code>    <code>-</code></td>
+</tr>
+<tr>
+<td>shift</td>
+<td><code>&lt;&lt;</code>    <code>&gt;&gt;</code></td>
+</tr>
+<tr>
+<td>bitwise AND</td>
+<td><code>&amp;</code></td>
+</tr>
+<tr>
+<td>bitwise XOR</td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td>bitwise OR</td>
+<td>`</td>
+<td>`</td>
+</tr>
+<tr>
+<td>relational and type test</td>
+<td><code>&gt;=</code>    <code>&gt;</code>    <code>&lt;=</code>    <code>&lt;</code>    <code>as</code>    <code>is</code>    <code>is!</code></td>
+</tr>
+<tr>
+<td>equality</td>
+<td><code>==</code>    <code>!=</code></td>
+</tr>
+<tr>
+<td>logical AND</td>
+<td><code>&amp;&amp;</code></td>
+</tr>
+<tr>
+<td>logical OR</td>
+<td>`</td>
+<td></td>
+<td>`</td>
+</tr>
+<tr>
+<td>if null</td>
+<td><code>??</code></td>
+</tr>
+<tr>
+<td>conditional</td>
+<td><code>*expr1* ? *expr2* : *expr3*</code></td>
+</tr>
+<tr>
+<td>cascade</td>
+<td><code>..</code></td>
+</tr>
+<tr>
+<td>assignment</td>
+<td><code>=</code>    <code>*=</code>    <code>/=</code>    <code>~/=</code>    <code>%=</code>    <code>+=</code>    <code>-=</code>    <code>&lt;&lt;=</code>    <code>&gt;&gt;=</code>    <code>&amp;=</code>    <code>^=</code>    `</td>
+<td>=<code></code>??=`</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数学操作符"><a href="#数学操作符" class="headerlink" title="数学操作符"></a>数学操作符</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Add</td>
+</tr>
+<tr>
+<td><code>–</code></td>
+<td>Subtract</td>
+</tr>
+<tr>
+<td><code>-*expr*</code></td>
+<td>Unary minus, also known as negation (reverse the sign of the expression)</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Multiply</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>Divide</td>
+</tr>
+<tr>
+<td><code>~/</code></td>
+<td>Divide, returning an integer result</td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>Get the remainder of an integer division (modulo)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="自增自减"><a href="#自增自减" class="headerlink" title="自增自减"></a>自增自减</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>++*var*</code></td>
+<td><code>*var* = *var* + 1</code> (expression value is <code>*var* + 1</code>)</td>
+</tr>
+<tr>
+<td><code>*var*++</code></td>
+<td><code>*var* = *var* + 1</code> (expression value is <code>*var*</code>)</td>
+</tr>
+<tr>
+<td><code>--*var*</code></td>
+<td><code>*var* = *var* – 1</code> (expression value is <code>*var* – 1</code>)</td>
+</tr>
+<tr>
+<td><code>*var*--</code></td>
+<td><code>*var* = *var* – 1</code> (expression value is <code>*var*</code>)</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b;</span><br><span class="line"></span><br><span class="line">a = <span class="number">0</span>;</span><br><span class="line">b = ++a; <span class="comment">// Increment a before b gets its value.</span></span><br><span class="line"><span class="keyword">assert</span>(a == b); <span class="comment">// 1 == 1</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">0</span>;</span><br><span class="line">b = a++; <span class="comment">// Increment a AFTER b gets its value.</span></span><br><span class="line"><span class="keyword">assert</span>(a != b); <span class="comment">// 1 != 0</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">0</span>;</span><br><span class="line">b = --a; <span class="comment">// Decrement a before b gets its value.</span></span><br><span class="line"><span class="keyword">assert</span>(a == b); <span class="comment">// -1 == -1</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">0</span>;</span><br><span class="line">b = a--; <span class="comment">// Decrement a AFTER b gets its value.</span></span><br><span class="line"><span class="keyword">assert</span>(a != b); <span class="comment">// -1 != 0</span></span><br></pre></td></tr></table></figure>
+<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>Equal; see discussion below</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>Not equal</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Less than</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Less than or equal to</td>
+</tr>
+</tbody>
+</table>
+<h4 id="类型测试操作符"><a href="#类型测试操作符" class="headerlink" title="类型测试操作符"></a>类型测试操作符</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>as</code></td>
+<td>Typecast (also used to specify <a href="https://www.dartlang.org/guides/language/language-tour#specifying-a-library-prefix" target="_blank" rel="noopener">library prefixes</a>)</td>
+</tr>
+<tr>
+<td><code>is</code></td>
+<td>True if the object has the specified type</td>
+</tr>
+<tr>
+<td><code>is!</code></td>
+<td>False if the object has the specified type</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断实例类型</span></span><br><span class="line"><span class="keyword">if</span> (emp <span class="keyword">is</span> Person) &#123;</span><br><span class="line">  <span class="comment">// Type check</span></span><br><span class="line">  emp.firstName = <span class="string">'Bob'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类型转化</span></span><br><span class="line">(emp <span class="keyword">as</span> Person).firstName = <span class="string">'Bob'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="分配操作符"><a href="#分配操作符" class="headerlink" title="分配操作符"></a>分配操作符</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Assign value to a</span></span><br><span class="line">a = value;</span><br><span class="line"><span class="comment">// Assign value to b if b is null; otherwise, b stays the same</span></span><br><span class="line">b ??= value; <span class="comment">// b为null则将value赋值给b,否则b保留原值</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th><code>=</code></th>
+<th><code>–=</code></th>
+<th><code>/=</code></th>
+<th><code>%=</code></th>
+<th><code>&gt;&gt;=</code></th>
+<th><code>^=</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+=</code></td>
+<td><code>*=</code></td>
+<td><code>~/=</code></td>
+<td><code>&lt;&lt;=</code></td>
+<td><code>&amp;=</code></td>
+<td>`</td>
+<td>=`</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>; <span class="comment">// Assign using =</span></span><br><span class="line">a *= <span class="number">3</span>; <span class="comment">// Assign and multiply: a = a * 3</span></span><br><span class="line"><span class="keyword">assert</span>(a == <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!*expr*</code></td>
+<td>inverts the following expression (changes false to true, and vice versa)</td>
+</tr>
+<tr>
+<td>`</td>
+<td></td>
+<td>`</td>
+<td>logical OR</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>logical AND</td>
+</tr>
+</tbody>
+</table>
+<h4 id="按位移位运算符"><a href="#按位移位运算符" class="headerlink" title="按位移位运算符"></a>按位移位运算符</h4><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>AND</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+<td>OR</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>XOR</td>
+</tr>
+<tr>
+<td><code>~*expr*</code></td>
+<td>Unary bitwise complement (0s become 1s; 1s become 0s)</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>Shift left</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Shift right</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> value = <span class="number">0x22</span>;</span><br><span class="line"><span class="keyword">final</span> bitmask = <span class="number">0x0f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>((value &amp; bitmask) == <span class="number">0x02</span>); <span class="comment">// AND</span></span><br><span class="line"><span class="keyword">assert</span>((value &amp; ~bitmask) == <span class="number">0x20</span>); <span class="comment">// AND NOT</span></span><br><span class="line"><span class="keyword">assert</span>((value | bitmask) == <span class="number">0x2f</span>); <span class="comment">// OR</span></span><br><span class="line"><span class="keyword">assert</span>((value ^ bitmask) == <span class="number">0x2d</span>); <span class="comment">// XOR</span></span><br><span class="line"><span class="keyword">assert</span>((value &lt;&lt; <span class="number">4</span>) == <span class="number">0x220</span>); <span class="comment">// Shift left</span></span><br><span class="line"><span class="keyword">assert</span>((value &gt;&gt; <span class="number">4</span>) == <span class="number">0x02</span>); <span class="comment">// Shift right</span></span><br></pre></td></tr></table></figure>
+<h4 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">condition ? expr1 : expr2</span><br><span class="line">条件成立返回expr1, 否则返回expr2</span><br><span class="line"></span><br><span class="line">expr1 ?? expr2</span><br><span class="line">expr1不为空返回expr1，否则返回expr2</span><br></pre></td></tr></table></figure>
+<h4 id="级联符号"><a href="#级联符号" class="headerlink" title="级联符号(..)"></a>级联符号(..)</h4><p>级联符号允许你对同一个对象上使用一系列的操作，也可能访问其属性，注意不能在返回值为void的函数使用级联符号</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">querySelector</span>(<span class="string">'#confirm'</span>) <span class="comment">// Get an object.</span></span><br><span class="line">  ..text = <span class="string">'Confirm'</span> <span class="comment">// Use its members.</span></span><br><span class="line">  ..classes.add(<span class="string">'important'</span>)</span><br><span class="line">  ..onClick.listen((e) =&gt; <span class="built_in">window</span>.alert(<span class="string">'Confirmed!'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> button = <span class="built_in">querySelector</span>(<span class="string">'#confirm'</span>);</span><br><span class="line">button.text = <span class="string">'Confirm'</span>;</span><br><span class="line">button.classes.add(<span class="string">'important'</span>);</span><br><span class="line">button.onClick.listen((e) =&gt; <span class="built_in">window</span>.alert(<span class="string">'Confirmed!'</span>));</span><br></pre></td></tr></table></figure>
+<h4 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h4><p><strong>条件语句</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (isRaining()) &#123;</span><br><span class="line">  you.bringRainCoat();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (isSnowing()) &#123;</span><br><span class="line">  you.wearJacket();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  car.putTopDown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>for循环</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="built_in">StringBuffer</span>(<span class="string">'Dart is fun'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  message.write(<span class="string">'!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>while和do-while循环</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!isDone()) &#123;</span><br><span class="line">  doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">  printLine();</span><br><span class="line">&#125; <span class="keyword">while</span> (!atEndOfPage());</span><br></pre></td></tr></table></figure>
+<p><strong>break和continue</strong></p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (shutDownRequested()) <span class="keyword">break</span>;</span><br><span class="line">  processIncomingRequests();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; candidates.length; i++) &#123;</span><br><span class="line">  <span class="keyword">var</span> candidate = candidates[i];</span><br><span class="line">  <span class="keyword">if</span> (candidate.yearsExperience &lt; <span class="number">5</span>) &#123;</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  candidate.interview();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>switch</strong></p>
+<p>Dart支持空的case，</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> command = <span class="string">'OPEN'</span>;</span><br><span class="line"><span class="keyword">switch</span> (command) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'CLOSED'</span>:</span><br><span class="line">    executeClosed();</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'PENDING'</span>:</span><br><span class="line">    executePending();</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'APPROVED'</span>:</span><br><span class="line">    executeApproved();</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'DENIED'</span>:</span><br><span class="line">    executeDenied();</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'OPEN'</span>:</span><br><span class="line">    executeOpen();</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    executeUnknown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><p><strong>Throw</strong></p>
+<p>抛出异常</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> FormatException(<span class="string">'Expected at least 1 section'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="string">'Out of llamas!'</span>; <span class="comment">// 抛出任意对象</span></span><br></pre></td></tr></table></figure>
+<p><strong>Catch</strong></p>
+<p>捕获异常</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; on OutOfLlamasException &#123;</span><br><span class="line">  buyMoreLlamas();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>捕获处理多个异常</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; on OutOfLlamasException &#123;</span><br><span class="line">  <span class="comment">// A specific exception</span></span><br><span class="line">  buyMoreLlamas();</span><br><span class="line">&#125; on Exception <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// Anything else that is an exception</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Unknown exception: <span class="subst">$e<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125; catch (e) &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  // No specified type, handles all</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  print('</span></span>Something really unknown: <span class="subst">$e<span class="string">');</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125;</span></span></span></span><br></pre></td></tr></table></figure>
+<p><strong>Finally</strong></p>
+<p>无论是否抛出异常，要确保某些代码运行，请使用finally子句。如果没有catch子句与异常匹配，则在finally子句运行后传播异常</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Error: <span class="subst">$e<span class="string">'); // Handle the exception first.</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125; finally &#123;</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">  cleanLlamaStalls(); // Then clean up.</span></span></span></span><br><span class="line"><span class="string"><span class="subst"><span class="string">&#125;</span></span></span></span><br></pre></td></tr></table></figure>
+<h4 id="类-Class"><a href="#类-Class" class="headerlink" title="类(Class)"></a>类(Class)</h4><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p>Dart programming language<br><a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">https://www.dartlang.org/guides/language/language-tour</a></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/dart/">dart</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/01/19/【dart】dart语言学习/';
+        this.page.identifier = '2019/01/19/【dart】dart语言学习/';
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, disqus_shortname = 'cronus', s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br>
+            ©2019 Cronus
+        </p>
+        
+<!-- Tencent Analytics -->
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=66156082" charset="UTF-8"></script>
+
+    </div>
+</footer>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '01/08/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            // snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

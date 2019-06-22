@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Cronus">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>eventkit介绍和使用 - Cronus</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="Cronus">Cronus</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar">
+        
+        <h1 class="cover-siteName">Cronus</h1>
+        <h3 class="cover-siteTitle">Cronus&#39;s Technology Blog</h3>
+        <p class="cover-siteDesc">不努力，背井离乡出来干嘛，当卧底吗</p>
+        <div class="cover-sns">
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">搜索</label>
+        <input class="search-field" type="text" name="s" placeholder="搜索">
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar">
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2019-01-18">2019-01-18</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">EventKit介绍和使用</h2>
+            <div class="post-meta">
+                本文总共3045个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h3 id="EventKit介绍和使用"><a href="#EventKit介绍和使用" class="headerlink" title="EventKit介绍和使用"></a>EventKit介绍和使用</h3><hr>
+<h4 id="EventKit"><a href="#EventKit" class="headerlink" title="EventKit"></a>EventKit</h4><p><img src="/Users/ls/Documents/Blog/Cronus/source/_posts/[iOS]EventKit介绍和使用.assets/image-20190118145717815.png" alt="image-20190118145717815"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重要: 从ios10开始需要在info.plist设置NSRemindersUsageDescription和NSCalendarsUsageDescription选项使用权限</span><br></pre></td></tr></table></figure>
+<p>EventKit可以允许用户操作系统日历和提醒事项，可获取存在的日历(提醒)事件，添加日历事件，修改日历事件以及删除日历事件，对于高级的事件，可以设置闹钟和循环事件</p>
+<h4 id="读写日历事件"><a href="#读写日历事件" class="headerlink" title="读写日历事件"></a>读写日历事件</h4><h5 id="连接Event-Store"><a href="#连接Event-Store" class="headerlink" title="连接Event Store"></a>连接Event Store</h5><p>初始化EKEventStore，该实例初始化需要大量的时间所以尽可能的复用该实例，另外EKEventStore一定不能在其他EventKit对象之前释放，否则可能会出现未定义的行为错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// EKEventStore *store = [[EKEventStore alloc]initWithAccessToEntityTypes:EKEntityMaskEvent]; 该方法已被弃用，直接使用init</span><br><span class="line">EKEventStore *store = [[EKEventStore alloc] init];</span><br></pre></td></tr></table></figure>
+<h5 id="获取事件"><a href="#获取事件" class="headerlink" title="获取事件"></a>获取事件</h5><p>有两种方式: 谓词(predicates)和搜索查询</p>
+<p><strong>谓词获取</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// Get the appropriate calendar</span><br><span class="line">NSCalendar *calendar = [NSCalendar currentCalendar];</span><br><span class="line"> </span><br><span class="line">// Create the start date components</span><br><span class="line">NSDateComponents *oneDayAgoComponents = [[NSDateComponents alloc] init];</span><br><span class="line">oneDayAgoComponents.day = -1;</span><br><span class="line">NSDate *oneDayAgo = [calendar dateByAddingComponents:oneDayAgoComponents</span><br><span class="line">                                              toDate:[NSDate date]</span><br><span class="line">                                             options:0];</span><br><span class="line"> </span><br><span class="line">// Create the end date components</span><br><span class="line">NSDateComponents *oneYearFromNowComponents = [[NSDateComponents alloc] init];</span><br><span class="line">oneYearFromNowComponents.year = 1;</span><br><span class="line">NSDate *oneYearFromNow = [calendar dateByAddingComponents:oneYearFromNowComponents</span><br><span class="line">                                                   toDate:[NSDate date]</span><br><span class="line">                                                  options:0];</span><br><span class="line"> </span><br><span class="line">// Create the predicate from the event store&apos;s instance method</span><br><span class="line">NSPredicate *predicate = [store predicateForEventsWithStartDate:oneDayAgo</span><br><span class="line">                                                        endDate:oneYearFromNow</span><br><span class="line">                                                      calendars:nil];</span><br><span class="line"> </span><br><span class="line">// Fetch all events that match the predicate</span><br><span class="line">NSArray *events = [store eventsMatchingPredicate:predicate];</span><br></pre></td></tr></table></figure>
+<p><code>eventsMatchingPredicate:</code>是同步方法，如果不想在主线程耗费太多时间，可使用dispatch_async和NSOperation进行异步执行</p>
+<p><strong>唯一标识获取</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (nullable EKEvent *)eventWithIdentifier:(NSString *)identifier;</span><br></pre></td></tr></table></figure>
+<p>使用EKEventStore的eventWithIdentifier:方法获取，如果事件是循环的，则返回该事件第一次触发的事件</p>
+<h5 id="创建和编辑事件"><a href="#创建和编辑事件" class="headerlink" title="创建和编辑事件"></a>创建和编辑事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (EKEvent *)eventWithEventStore:(EKEventStore *)eventStore;</span><br></pre></td></tr></table></figure>
+<p>EKEvent包含主题、开始时间、结束时间、闹钟等信息</p>
+<h5 id="保存和移除事件"><a href="#保存和移除事件" class="headerlink" title="保存和移除事件"></a>保存和移除事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)saveEvent:(EKEvent *)event span:(EKSpan)span commit:(BOOL)commit error:(NSError **)error;</span><br><span class="line">- (BOOL)removeEvent:(EKEvent *)event span:(EKSpan)span commit:(BOOL)commit error:(NSError **)error；</span><br></pre></td></tr></table></figure>
+<p> 参数span的值为 EKSpanThisEvent 或 EKSpanFutureEvents，分别标识单个事件和循环事件</p>
+<h5 id="批量创建和编辑事件"><a href="#批量创建和编辑事件" class="headerlink" title="批量创建和编辑事件"></a>批量创建和编辑事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)saveEvent:(EKEvent *)event span:(EKSpan)span commit:(BOOL)commit error:(NSError **)error;</span><br><span class="line">- (BOOL)removeEvent:(EKEvent *)event span:(EKSpan)span commit:(BOOL)commit error:(NSError **)error；</span><br><span class="line">- (BOOL)commit:(NSError **)error</span><br></pre></td></tr></table></figure>
+<p>将commit参数设置为NO，然后结合commit方法批量提交保存</p>
+<h4 id="配置闹钟"><a href="#配置闹钟" class="headerlink" title="配置闹钟"></a>配置闹钟</h4><p>EKEvent实例可通过如下方法添加和移除闹钟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void)addAlarm:(EKAlarm *)alarm;      // 添加闹钟</span><br><span class="line">- (void)removeAlarm:(EKAlarm *)alarm;   // 移除闹钟</span><br></pre></td></tr></table></figure>
+<h4 id="检测系统日历数据库变化"><a href="#检测系统日历数据库变化" class="headerlink" title="检测系统日历数据库变化"></a>检测系统日历数据库变化</h4><p>如果在系统日历中修改了日历事件可以通过<a href="https://developer.apple.com/documentation/foundation/nsnotification/name/1507525-ekeventstorechanged" target="_blank" rel="noopener">EKEventStoreChangedNotification</a>告知原APP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[NSNotificationCenter defaultCenter] addObserver:self</span><br><span class="line">                                         selector:@selector(storeChanged:)</span><br><span class="line">                                             name:EKEventStoreChangedNotification</span><br><span class="line">                                           object:eventStore];</span><br></pre></td></tr></table></figure>
+<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4>
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/iOS/">iOS</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/01/18/【iOS】EventKit介绍和使用/';
+        this.page.identifier = '2019/01/18/【iOS】EventKit介绍和使用/';
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, disqus_shortname = 'cronus', s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br>
+            ©2019 Cronus
+        </p>
+        
+<!-- Tencent Analytics -->
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=66156082" charset="UTF-8"></script>
+
+    </div>
+</footer>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '01/08/2019',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            // snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
