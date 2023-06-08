@@ -276,7 +276,7 @@
 <h4 id="SQLite-CREATE-TRIGGER-语句"><a href="#SQLite-CREATE-TRIGGER-语句" class="headerlink" title="SQLite  CREATE TRIGGER 语句"></a>SQLite  CREATE TRIGGER 语句</h4><p>创建一个触发器可以使用CREATE TRIGGER语句，格式如下</p>
 <span id="more"></span>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER [IF NOT EXISTS] trigger_name </span><br><span class="line">   [BEFORE|AFTER|INSTEAD OF] [INSERT|UPDATE|DELETE] </span><br><span class="line">   ON table_name</span><br><span class="line">   [WHEN condition]</span><br><span class="line">BEGIN</span><br><span class="line"> statements;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE TRIGGER [IF NOT EXISTS] trigger_name <br>   [BEFORE|AFTER|INSTEAD OF] [INSERT|UPDATE|DELETE] <br>   ON table_name<br>   [WHEN condition]<br>BEGIN<br> statements;<br>END;<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>在CREATE TRIGGER后设置触发器的名称</li>
@@ -329,55 +329,55 @@
 </tr>
 </tbody></table>
 <h4 id="SQLite触发器示例"><a href="#SQLite触发器示例" class="headerlink" title="SQLite触发器示例"></a>SQLite触发器示例</h4><p>创建一张名为leads的表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE leads (</span><br><span class="line"> id integer PRIMARY KEY,</span><br><span class="line"> first_name text NOT NULL,</span><br><span class="line"> last_name text NOT NULL,</span><br><span class="line"> phone text NOT NULL,</span><br><span class="line"> email text NOT NULL,</span><br><span class="line"> source text NOT NULL</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE TABLE leads (<br> id integer PRIMARY KEY,<br> first_name text NOT NULL,<br> last_name text NOT NULL,<br> phone text NOT NULL,<br> email text NOT NULL,<br> source text NOT NULL<br>);<br></code></pre></td></tr></table></figure>
 
 <h5 id="SQLite-BEFORE-INSERT触发器示例"><a href="#SQLite-BEFORE-INSERT触发器示例" class="headerlink" title="SQLite BEFORE INSERT触发器示例"></a>SQLite BEFORE INSERT触发器示例</h5><p>假设在leads表中插入数据前先检查邮箱地址的合法性，这种场景可以使用BEFORE INSERT触发器</p>
 <p>创建BEFORE INSERT触发器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER validate_email_before_insert_leads BEFORE INSERT ON leads</span><br><span class="line">BEGIN</span><br><span class="line"> SELECT</span><br><span class="line"> CASE</span><br><span class="line"> WHEN NEW.email NOT LIKE &#x27;%_@__%.__%&#x27; THEN</span><br><span class="line"> RAISE (</span><br><span class="line"> ABORT,</span><br><span class="line"> &#x27;Invalid email address&#x27;</span><br><span class="line"> )</span><br><span class="line"> END;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE TRIGGER validate_email_before_insert_leads BEFORE INSERT ON leads<br>BEGIN<br> SELECT<br> CASE<br> WHEN NEW.email NOT LIKE &#x27;%_@__%.__%&#x27; THEN<br> RAISE (<br> ABORT,<br> &#x27;Invalid email address&#x27;<br> )<br> END;<br>END;<br></code></pre></td></tr></table></figure>
 
 <p>我们使用NEW关键字来访问要插入的email字段的数据，为了验证email的合法性，我们使用LIKE操作符来决定email是否匹配邮箱地址的格式，如果不合法，我们使用RAISE函数来中止插入操作并且提示错误信息</p>
 <p>1）插入非法的email数据到leads表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO leads (</span><br><span class="line"> first_name,</span><br><span class="line"> last_name,</span><br><span class="line"> email,</span><br><span class="line"> phone</span><br><span class="line">)</span><br><span class="line">VALUES</span><br><span class="line"> (</span><br><span class="line"> &#x27;John&#x27;,</span><br><span class="line"> &#x27;Doe&#x27;,</span><br><span class="line"> &#x27;jjj&#x27;,</span><br><span class="line"> &#x27;4089009334&#x27;</span><br><span class="line"> );</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">INSERT INTO leads (<br> first_name,<br> last_name,<br> email,<br> phone<br>)<br>VALUES<br> (<br> &#x27;John&#x27;,<br> &#x27;Doe&#x27;,<br> &#x27;jjj&#x27;,<br> &#x27;4089009334&#x27;<br> );<br></code></pre></td></tr></table></figure>
 
 <p>SQLite提示错误: Invalid email address并且中止插入数据操作</p>
 <p>2）插入合法的Email数据库到leads表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO leads (</span><br><span class="line"> first_name,</span><br><span class="line"> last_name,</span><br><span class="line"> email,</span><br><span class="line"> phone</span><br><span class="line">)</span><br><span class="line">VALUES</span><br><span class="line"> (</span><br><span class="line"> &#x27;John&#x27;,</span><br><span class="line"> &#x27;Doe&#x27;,</span><br><span class="line"> &#x27;john.doe@sqlitetutorial.net&#x27;,</span><br><span class="line"> &#x27;4089009334&#x27;</span><br><span class="line"> );</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">INSERT INTO leads (<br> first_name,<br> last_name,<br> email,<br> phone<br>)<br>VALUES<br> (<br> &#x27;John&#x27;,<br> &#x27;Doe&#x27;,<br> &#x27;john.doe@sqlitetutorial.net&#x27;,<br> &#x27;4089009334&#x27;<br> );<br></code></pre></td></tr></table></figure>
 
 <p>数据都是合法的，因此可以插入数据到leads表中成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line"> first_name,</span><br><span class="line"> last_name,</span><br><span class="line"> email,</span><br><span class="line"> phone</span><br><span class="line">FROM</span><br><span class="line"> leads;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">SELECT<br> first_name,<br> last_name,<br> email,<br> phone<br>FROM<br> leads;<br></code></pre></td></tr></table></figure>
 
 <p> <img src="http://www.sqlitetutorial.net/wp-content/uploads/2015/12/SQLite-TRIGGER-Leads-Table.png" srcset="/img/loading.gif" lazyload alt="div"> </p>
 <h5 id="SQLite-AFTER-UPDATE-触发器"><a href="#SQLite-AFTER-UPDATE-触发器" class="headerlink" title="SQLite AFTER UPDATE 触发器"></a>SQLite AFTER UPDATE 触发器</h5><p>leader的电话和邮箱都是很重要的信息并且这些信息不能丢失，这种场景下为了防止用户误操作导致数据修改错误或者丢失，可以使用触发器记录所有修改的记录</p>
 <p>创建lead_logs表用于存储所有修改的记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE lead_logs (</span><br><span class="line"> id INTEGER PRIMARY KEY,</span><br><span class="line"> old_id int,</span><br><span class="line"> new_id int,</span><br><span class="line"> old_phone text,</span><br><span class="line"> new_phone text,</span><br><span class="line"> old_email text,</span><br><span class="line"> new_email text,</span><br><span class="line"> user_action text,</span><br><span class="line"> created_at text</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE TABLE lead_logs (<br> id INTEGER PRIMARY KEY,<br> old_id int,<br> new_id int,<br> old_phone text,<br> new_phone text,<br> old_email text,<br> new_email text,<br> user_action text,<br> created_at text<br>);<br></code></pre></td></tr></table></figure>
 
 <p>创建AFETER UPDATE触发器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER log_contact_after_update AFTER UPDATE ON leads</span><br><span class="line">WHEN old.phone &lt;&gt; new.phone</span><br><span class="line">OR old.email &lt;&gt; new.email</span><br><span class="line">BEGIN</span><br><span class="line"> INSERT INTO lead_logs (</span><br><span class="line"> old_id,</span><br><span class="line"> new_id,</span><br><span class="line"> old_phone,</span><br><span class="line"> new_phone,</span><br><span class="line"> old_email,</span><br><span class="line"> new_email,</span><br><span class="line"> user_action,</span><br><span class="line"> created_at</span><br><span class="line"> )</span><br><span class="line">VALUES</span><br><span class="line"> (</span><br><span class="line"> old.id,</span><br><span class="line"> new.id,</span><br><span class="line"> old.phone,</span><br><span class="line"> new.phone,</span><br><span class="line"> old.email,</span><br><span class="line"> new.email,</span><br><span class="line"> &#x27;UPDATE&#x27;,</span><br><span class="line"> DATETIME(&#x27;NOW&#x27;)</span><br><span class="line"> ) ;</span><br><span class="line">END;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE TRIGGER log_contact_after_update AFTER UPDATE ON leads<br>WHEN old.phone &lt;&gt; new.phone<br>OR old.email &lt;&gt; new.email<br>BEGIN<br> INSERT INTO lead_logs (<br> old_id,<br> new_id,<br> old_phone,<br> new_phone,<br> old_email,<br> new_email,<br> user_action,<br> created_at<br> )<br>VALUES<br> (<br> old.id,<br> new.id,<br> old.phone,<br> new.phone,<br> old.email,<br> new.email,<br> &#x27;UPDATE&#x27;,<br> DATETIME(&#x27;NOW&#x27;)<br> ) ;<br>END;<br></code></pre></td></tr></table></figure>
 
 <p>修改用户信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE leads</span><br><span class="line">SET last_name = &#x27;Smith&#x27;</span><br><span class="line">WHERE</span><br><span class="line"> id = 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">UPDATE leads<br>SET last_name = &#x27;Smith&#x27;<br>WHERE<br> id = 1;<br></code></pre></td></tr></table></figure>
 
 <p>log_contact_after_update触发器不会执行，因为没有修改phone或者email字段的数据</p>
 <p>更新用户的phone和email信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UPDATE leads</span><br><span class="line">SET phone = &#x27;4089998888&#x27;,</span><br><span class="line"> email = &#x27;john.smith@sqlitetutorial.net&#x27;</span><br><span class="line">WHERE</span><br><span class="line"> id = 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">UPDATE leads<br>SET phone = &#x27;4089998888&#x27;,<br> email = &#x27;john.smith@sqlitetutorial.net&#x27;<br>WHERE<br> id = 1;<br></code></pre></td></tr></table></figure>
 
 
 
 <p>查看修改记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line"> old_phone, new_phone, old_email, new_email, user_action</span><br><span class="line">FROM</span><br><span class="line"> lead_logs;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">SELECT<br> old_phone, new_phone, old_email, new_email, user_action<br>FROM<br> lead_logs;<br></code></pre></td></tr></table></figure>
 
 
 
 <p>查询结果</p>
 <p><img src="http://www.sqlitetutorial.net/wp-content/uploads/2015/12/SQLite-TRIGGER-After-Update-Trigger-Example.png" srcset="/img/loading.gif" lazyload alt="SQLite TRIGGER After Update Trigger Example"></p>
 <h4 id="SQLite触发器删除"><a href="#SQLite触发器删除" class="headerlink" title="SQLite触发器删除"></a>SQLite触发器删除</h4><p>使用DROP TRIGGER删除已经存在的触发器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TRIGGER [IF EXISTS] trigger_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">DROP TRIGGER [IF EXISTS] trigger_name;<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>指定需要删除的触发器名称</li>
 <li>使用IF EXISTS防止删除不存在的触发器</li>
 </ol>
-<h5 id="删除触发器示例"><a href="#删除触发器示例" class="headerlink" title="删除触发器示例"></a>删除触发器示例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TRIGGER validate_email_before_insert_leads;</span><br></pre></td></tr></table></figure>
+<h5 id="删除触发器示例"><a href="#删除触发器示例" class="headerlink" title="删除触发器示例"></a>删除触发器示例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">DROP TRIGGER validate_email_before_insert_leads;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -496,6 +496,41 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'Cronusl/Cronusl.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>

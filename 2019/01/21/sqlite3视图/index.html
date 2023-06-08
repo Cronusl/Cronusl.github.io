@@ -283,30 +283,30 @@
 <span id="more"></span>
 
 <h4 id="SQLite-CREATE-VIEW-创建视图"><a href="#SQLite-CREATE-VIEW-创建视图" class="headerlink" title="SQLite CREATE VIEW 创建视图"></a>SQLite CREATE VIEW 创建视图</h4><p>创建视图的格式如下: </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE [TEMP] VIEW [IF NOT EXISTS] view_name(column-name-list)</span><br><span class="line">AS </span><br><span class="line">   select-statement;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE [TEMP] VIEW [IF NOT EXISTS] view_name(column-name-list)<br>AS <br>   select-statement;<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li>设置视图的名称，IF NOT EXISTS可选项可以防止重复创建视图</li>
 <li>如果你想仅在数据连接的时候才想视图是可见的，可以使用TEMP或TEMPORARY可选项创建，当数据库被关闭时SQLite会自动清除临时的视图</li>
 </ol>
 <h4 id="SQLite-CREATE-VIEW-示例"><a href="#SQLite-CREATE-VIEW-示例" class="headerlink" title="SQLite CREATE VIEW 示例"></a>SQLite CREATE VIEW 示例</h4><p>假设需要从同一个数据库的tracks, albums和genres表中使用内连接获取数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line"> trackid,</span><br><span class="line"> tracks.name,</span><br><span class="line"> albums.Title AS album,</span><br><span class="line"> media_types.Name AS media,</span><br><span class="line"> genres.Name AS genres</span><br><span class="line">FROM</span><br><span class="line"> tracks</span><br><span class="line">INNER JOIN albums ON Albums.AlbumId = tracks.AlbumId</span><br><span class="line">INNER JOIN media_types ON media_types.MediaTypeId = tracks.MediaTypeId</span><br><span class="line">INNER JOIN genres ON genres.GenreId = tracks.GenreId;</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">SELECT</span><br> trackid,<br> tracks.name,<br> albums.Title <span class="hljs-keyword">AS</span> album,<br> media_types.Name <span class="hljs-keyword">AS</span> media,<br> genres.Name <span class="hljs-keyword">AS</span> genres<br><span class="hljs-keyword">FROM</span><br> tracks<br><span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> albums <span class="hljs-keyword">ON</span> Albums.AlbumId = tracks.AlbumId<br><span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> media_types <span class="hljs-keyword">ON</span> media_types.MediaTypeId = tracks.MediaTypeId<br><span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> genres <span class="hljs-keyword">ON</span> genres.GenreId = tracks.GenreId;<br></code></pre></td></tr></table></figure>
 
 <p><img src="http://www.sqlitetutorial.net/wp-content/uploads/2015/12/MySQL-CREATE-VIEW-example.jpg" srcset="/img/loading.gif" lazyload alt="MySQL CREATE VIEW example"></p>
 <p>基于这个查询可以创建如下视图</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CREATE VIEW v_tracks </span><br><span class="line">AS </span><br><span class="line">SELECT</span><br><span class="line"> trackid,</span><br><span class="line"> tracks.name,</span><br><span class="line"> albums.Title AS album,</span><br><span class="line"> media_types.Name AS media,</span><br><span class="line"> genres.Name AS genres</span><br><span class="line">FROM</span><br><span class="line"> tracks</span><br><span class="line">INNER JOIN albums ON Albums.AlbumId = tracks.AlbumId</span><br><span class="line">INNER JOIN media_types ON media_types.MediaTypeId = tracks.MediaTypeId</span><br><span class="line">INNER JOIN genres ON genres.GenreId = tracks.GenreId;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">CREATE VIEW v_tracks <br>AS <br>SELECT<br> trackid,<br> tracks.name,<br> albums.Title AS album,<br> media_types.Name AS media,<br> genres.Name AS genres<br>FROM<br> tracks<br>INNER JOIN albums ON Albums.AlbumId = tracks.AlbumId<br>INNER JOIN media_types ON media_types.MediaTypeId = tracks.MediaTypeId<br>INNER JOIN genres ON genres.GenreId = tracks.GenreId;<br></code></pre></td></tr></table></figure>
 
 <p>现在可以使用如下简单的查询语句代替之前复杂的语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line"> *</span><br><span class="line">FROM</span><br><span class="line"> v_tracks</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">SELECT<br> *<br>FROM<br> v_tracks<br></code></pre></td></tr></table></figure>
 
 
 
 <h4 id="移除视图"><a href="#移除视图" class="headerlink" title="移除视图"></a>移除视图</h4><p>使用DROP VIEW移除视图，格式如下: </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP VIEW [IF EXISTS] view_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">DROP VIEW [IF EXISTS] view_name;<br></code></pre></td></tr></table></figure>
 
 <p>如果你移除一个不存在的视图，那么SQLite会发出一个错误，可以使用IF EXISTS可选项来防止，只有当要删除的视图存在的时候才会执行删除视图</p>
 <p><strong>删除视图示例</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP VIEW v_tracks;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">DROP VIEW v_tracks;<br></code></pre></td></tr></table></figure>
 
 
 
@@ -425,6 +425,41 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'Cronusl/Cronusl.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
